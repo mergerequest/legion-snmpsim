@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 RUN pip install snmpsim
 
-RUN adduser --system snmpsim
+RUN adduser --system snmpsim && rm -rf /usr/local/snmpsim/data/*
 
 ADD data /usr/local/snmpsim/data
 
