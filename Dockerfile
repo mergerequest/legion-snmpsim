@@ -10,8 +10,6 @@ RUN chown -R snmpsim:nogroup /home/snmpsim
 
 RUN chmod 755 /home/snmpsim
 
-USER snmpsim
-
 EXPOSE 161/udp
 
 CMD snmpsimd.py --agent-udpv4-endpoint=0.0.0.0:161 --process-user=snmpsim --process-group=nogroup --v2c-arch --cache-dir=/home/snmpsim
