@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 RUN pip install snmpsim
 
-RUN adduser --system snmpsim && rm -rf /usr/local/snmpsim/data/* && rm -rf /usr/local/snmpsim/variation/ && chown -R snmpsim:nogroup /home/snmpsim
+RUN adduser --system snmpsim && rm -rf /usr/local/snmpsim/data/* && rm -rf /usr/local/snmpsim/variation/ && chown -R snmpsim:nogroup /home/snmpsim && chmod 755 /home/snmpsim
 
 ADD data /usr/local/snmpsim/data
 
