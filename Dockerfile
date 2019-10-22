@@ -2,9 +2,15 @@ FROM python:3.7-slim
 
 RUN pip install snmpsim
 
-RUN adduser --system snmpsim && rm -rf /usr/local/snmpsim/data/* && rm -rf /usr/local/snmpsim/variation/ && chown -R snmpsim:nogroup /home/snmpsim && chmod 755 /home/snmpsim
+RUN adduser --system snmpsim && rm -rf /usr/local/snmpsim/data/* && rm -rf /usr/local/snmpsim/variation/ 
 
 ADD data /usr/local/snmpsim/data
+
+RUN chown -R snmpsim:nogroup /home/snmpsim
+
+RUN chmod 755 /home/snmpsim
+
+USER snmpsim
 
 EXPOSE 161/udp
 
