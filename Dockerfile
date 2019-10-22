@@ -8,4 +8,4 @@ ADD data /usr/local/snmpsim/data
 
 EXPOSE 161/udp
 
-CMD snmpsimd.py --agent-udpv4-endpoint=0.0.0.0:161 --process-user=snmpsim --process-group=nogroup --v2carch --cache-dir=/home/snmpsim
+CMD snmpsimd.py --agent-udpv4-endpoint=0.0.0.0:161 --process-user=snmpsim --process-group=nogroup --v2c-arch --cache-dir=/home/snmpsim
