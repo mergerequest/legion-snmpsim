@@ -6,7 +6,9 @@ RUN adduser --system snmpsim && rm -rf /usr/local/snmpsim/data/* && rm -rf /usr/
 
 ADD data /usr/local/snmpsim/data
 
-RUN chmod 755 /tmp
+RUN mkdir -p /tmp/snmpsim
+RUN touch /tmp/snmpsim/_usr_local_snmpsim_data_public.dbm
+RUN chmod -R 777 /tmp
 
 EXPOSE 1024/udp
 
