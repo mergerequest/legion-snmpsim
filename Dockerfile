@@ -8,8 +8,9 @@ ADD data /usr/local/snmpsim/data
 
 RUN mkdir -p /tmp/snmpsim
 RUN touch /tmp/snmpsim/_usr_local_snmpsim_data_public.dbm
+COPY endpoints.txt /tmp/snmpsim/
 RUN chmod -R 777 /tmp
 
-EXPOSE 1024/udp
+EXPOSE 1024-1074/udp
 
-CMD snmpsimd.py --agent-udpv4-endpoint=0.0.0.0:1024 --process-user=snmpsim --process-group=nogroup --v2c-arch
+CMD snmpsimd.py --process-user=snmpsim --process-group=nogroup --args-from-file=/tmp/snmpsim/endpoints.txt
