@@ -13,4 +13,4 @@ RUN chmod -R 777 /tmp
 
 EXPOSE 1024-1074/udp
 
-CMD snmpsimd.py --process-user=snmpsim --process-group=nogroup --args-from-file=/tmp/snmpsim/endpoints.txt
+CMD snmpsimd.py --v2c-arch --process-user=snmpsim --process-group=nogroup --args-from-file=/tmp/snmpsim/endpoints.txt
